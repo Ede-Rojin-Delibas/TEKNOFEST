@@ -1,110 +1,76 @@
 import pandas as pd
 import numpy as np
-import pickle
-from sklearn.model_selection import train_test_split
+import os
+import joblib
+
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error
 from sklearn.preprocessing import PolynomialFeatures
+from sklearn.ensemble import RandomForestRegressor
+from sklearn.metrics import mean_squared_error, r2_score
+from sklearn.pipeline import make_pipeline
 
-#veri
-# df=pd.read_csv("veriler/tyt.csv") 
+# 3 farklı model oluşturup karşılaştırmak için fonksiyon
+def train_and_select_model(csv_path, model_name, save_folder="modeller"):
+    df = pd.read_csv(csv_path)
 
-# #özellikler ve hedef değişken
-# X=df[["tyt_net"]] #bağımsız değişken
-# y=df["siralama"]  #bağımlı değişken
+    if "siralama" not in df.columns or df.shape[0] < 5:
+        print(f"{model_name} - Veri seti eksik veya yetersiz.")
+        return
 
-# #veriyi eğitim ve test olarak ayırma
-# X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    # log dönüşümü (feature engineering)
+    df['log_siralama'] = np.log(df['siralama'])
+    X = df[['log_siralama']]
+    y = df.iloc[:, 1]  # ikinci sütun genelde net değeridir (tyt_net, ayt_net, vs.)
 
-# #modeli oluşturma ve eğitme
-# model=LinearRegression()
-# model.fit(X_train, y_train)
+    # Linear Regression
+    lr = LinearRegression()
+    lr.fit(X, y)
+    pred_lr = lr.predict(X)
+    mse_lr = mean_squared_error(y, pred_lr)
+    r2_lr = r2_score(y, pred_lr)
+    print(f"{model_name} doğruluk oranı: %{r2_lr*100:.2f}")
 
-# #model performansını kontrol etme
-# y_pred=model.predict(X_test)
-# mse=mean_squared_error(y_test, y_pred)
-# print(f"Model MSE: {mse:.2f}")
+    # Polynomial Regression (degree=2)
+    poly = make_pipeline(PolynomialFeatures(degree=2), LinearRegression())
+    poly.fit(X, y)
+    pred_poly = poly.predict(X)
+    mse_poly = mean_squared_error(y, pred_poly)
+    r2_poly = r2_score(y, pred_poly)
+    print(f"{model_name} doğruluk oranı: %{r2_poly*100:.2f}")
 
-# #modeli dosyaya kaydetme
-# with open ("modeller/model_tyt.pkl","wb") as f:
-#     pickle.dump(model, f)
+    # Random Forest
+    rf = RandomForestRegressor(n_estimators=100, random_state=42)
+    rf.fit(X, y)
+    pred_rf = rf.predict(X)
+    mse_rf = mean_squared_error(y, pred_rf)
+    r2_rf = r2_score(y, pred_rf)
+    print(f"{model_name} doğruluk oranı: %{r2_rf*100:.2f}")
 
-# print("TYT modeli başarıyla kaydedildi: modeller/model_tyt.pkl")
+    # Karşılaştırma ve en iyi modeli seçme
+    results = {
+        "Linear Regression": (lr, mse_lr, r2_lr),
+        "Polynomial Regression": (poly, mse_poly, r2_poly),
+        "Random Forest": (rf, mse_rf, r2_rf)
+    }
 
-def modeli_egit_ve_kaydet(dosya_adi, ozellik, hedef, model_adi):
-    print(f"{model_adi} modeli eğitiliyor...")
+    best_model_name = min(results, key=lambda name: results[name][1])
+    best_model, best_mse, best_r2 = results[best_model_name]
 
-    #veri seti okuma
-    df=pd.read_csv(dosya_adi)
+    print(f"\n {model_name} için en iyi model: {best_model_name}")
+    print(f"   - MSE: {best_mse:.2f} | R²: {best_r2:.4f}")
 
-    # Bağımsız ve bağımlı değişkenleri ayırma
-    X = df[[ozellik]]
-    y = df[hedef] 
-
-    # Eğitim ve test setlerine ayır
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
-
-    # Modeli oluştur ve eğit
-    model = LinearRegression()
-    model.fit(X_train, y_train)
-
-    # Tahmin ve hata hesabı
-    y_pred = model.predict(X_test)
-    mse = mean_squared_error(y_test, y_pred)
-    print(f"{model_adi} Model MSE: {mse:.2f}")
-
-    # Modeli .pkl dosyasına kaydet
-    with open(f"modeller/{model_adi}.pkl", "wb") as f:
-        pickle.dump(model, f)
-
-    print(f"{model_adi} başarıyla kaydedildi.\n")
+    os.makedirs(save_folder, exist_ok=True)
+    joblib.dump(best_model, f"{save_folder}/{model_name}.pkl")
     
-# Tüm alanlar için modelleri eğit
-modeli_egit_ve_kaydet("veriler/tyt.csv", "tyt_net", "siralama", "model_tyt")
-modeli_egit_ve_kaydet("veriler/ayt_sayisal.csv", "ayt_net", "siralama", "model_sayisal")
-modeli_egit_ve_kaydet("veriler/ayt_sozel.csv", "ayt_net", "siralama", "model_sozel")
-modeli_egit_ve_kaydet("veriler/ayt_ea.csv", "ayt_net", "siralama", "model_ea")
 
-#ea için log dönüşümü yapıldı ve ona uygun bir model olan polinomial regresyon geliştirildi.
-# Orijinal veri
-data = {
-    "siralama": [1000, 5000, 10000, 20000, 30000, 40000, 50000, 60000, 70000, 80000, 90000, 100000, 150000, 200000],
-    "ayt_net": [66.62, 59.36, 56.98, 51.36, 49.82, 45.96, 44.43, 44.21, 42.96, 40.43, 39.61, 39.11, 34.82, 30.82]
-}
-df = pd.DataFrame(data)
 
-# 1. Veri Sayısını Artır
-extra_rows = []
-for i in range(10_000, 200_000, 10_000):
-    if i not in df["siralama"].values:
-        net = np.interp(i, df["siralama"], df["ayt_net"])
-        extra_rows.append({"siralama": i, "ayt_net": net})
+# Tüm modelleri sırayla eğitiyoruz
+models_to_train = [
+    ("veriler/tyt.csv", "tyt"),
+    ("veriler/ayt_sayisal.csv", "ayt_sayisal"),
+    ("veriler/ayt_sozel.csv", "ayt_sozel"),
+    ("veriler/ayt_ea_processed.csv", "ayt_ea"),
+]
 
-df_extra = pd.DataFrame(extra_rows)
-df = pd.concat([df, df_extra], ignore_index=True).sort_values(by="siralama")
-
-# 2. Log Dönüşümü
-df["log_siralama"] = np.log(df["siralama"])
-
-# 3. Polynomial Regression
-X = df[["ayt_net"]]
-y = df["log_siralama"]
-
-poly = PolynomialFeatures(degree=2)
-X_poly = poly.fit_transform(X)
-
-X_train, X_test, y_train, y_test = train_test_split(X_poly, y, test_size=0.2, random_state=42)
-
-model = LinearRegression()
-model.fit(X_train, y_train)
-
-# 4. Modeli Kaydet
-with open("modeller/model_ayt_ea.pkl", "wb") as f:
-    pickle.dump((model, poly), f)
-
-print("AYT Eşit Ağırlık modeli başarıyla kaydedildi.")
-
-# 5. Tahmin Sonuçları ve CSV’ye Kaydetme
-df["tahmin_log_siralama"] = model.predict(poly.transform(df[["ayt_net"]]))
-df["tahmin_siralama"] = np.exp(df["tahmin_log_siralama"])
-df.to_csv("veriler/ayt_ea_processed.csv", index=False)
+for path, name in models_to_train:
+    train_and_select_model(path, name)

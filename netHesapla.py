@@ -66,6 +66,7 @@ def main():
     print("\nNetleriniz:")
     for ders, net in net_sonuclar.items():
         print(f"{ders}: {net}")
+    print("Toplam Net: ", sum(net_sonuclar.values()))
 
 #programı başlat
 if __name__=="__main__":
