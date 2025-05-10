@@ -1,40 +1,69 @@
-import pickle
+import joblib
+import os
 import numpy as np
-import sys
+from typing import Union
 
-def tahmin_et(model_path, net, is_polinomial=False):
-    with open(model_path, "rb") as f:
-        if is_polinomial:
-            model,poly = pickle.load(f)
-            net_poly = poly.transform(np.array([[net]]))
-            log_siralama=model.predict(net_poly)[0]
-            return int(np.exp(log_siralama))
-        else:
-            model = pickle.load(f)
-            return int(model.predict(np.array([[net]]))[0])
+def tahmin_yap(sinav_turu: str, net: Union[float, int]) -> int:
+    """
+    Verilen sınav türü ve net değerine göre sıralama tahmini yapar.
+    
+    Args:
+        sinav_turu (str): Sınav türü ('tyt', 'ayt_ea', 'ayt_say', 'ayt_soz')
+        net (float|int): Toplam net değeri
         
-# Komut satırından parametre alma
-if len(sys.argv) != 3:
-    print("Kullanım: python tahmin_et.py <sinav_turu> <net>")
-    print("Örnek: python tahmin_et.py tyt 85.75")
-    sys.exit()
+    Returns:
+        int: Tahmini sıralama
+        
+    Raises:
+        ValueError: Geçersiz sınav türü veya net değeri için
+        FileNotFoundError: Model dosyası bulunamadığında
+    """
+    # Sınav türü kontrolü
+    sinav_turu = sinav_turu.lower()
+    GECERLI_SINAV_TURLERI = ["tyt", "ayt_ea", "ayt_say", "ayt_soz"]
+    if sinav_turu not in GECERLI_SINAV_TURLERI:
+        raise ValueError(f"Geçersiz sınav türü. Geçerli türler: {', '.join(GECERLI_SINAV_TURLERI)}")
+    
+    # Net değeri kontrolü
+    try:
+        net = float(net)
+        if net < 0 or net > 120:  # Maksimum net kontrolü
+            raise ValueError("Net değeri 0 ile 120 arasında olmalıdır")
+    except (TypeError, ValueError):
+        raise ValueError("Geçersiz net değeri")
+    
+    # Model dosyası kontrolü
+    model_path = os.path.join("modeller", f"{sinav_turu}_model.pkl")
+    if not os.path.exists(model_path):
+        raise FileNotFoundError(f"{sinav_turu} için model dosyası bulunamadı: {model_path}")
+    
+    try:
+        # Model yükleme
+        model = joblib.load(model_path)
+        
+        # Tahmin
+        net_array = np.array([[net]])  # 2D array'e çevir
+        tahmin = model.predict(net_array)
+        
+        # Sonucu tamsayıya çevir ve sınırla
+        siralama = int(round(tahmin[0]))
+        return max(1, min(siralama, 2_000_000))  # Sıralama sınırları
+        
+    except Exception as e:
+        raise RuntimeError(f"Tahmin sırasında hata oluştu: {str(e)}")
 
-sinav = sys.argv[1].lower()
-net = float(sys.argv[2])
-
-# Model yolunu ve polynomial kullanılıp kullanılmadığını belirleme
-model_paths = {
-    "tyt": ("modeller/model_tyt.pkl", False),
-    "sayisal": ("modeller/model_sayisal.pkl", False),
-    "sozel": ("modeller/model_sozel.pkl", False),
-    "ea": ("modeller/model_ayt_ea.pkl", True)
-}
-
-if sinav not in model_paths:
-    print("Geçersiz sınav türü! Geçerli türler: tyt, sayisal, sozel, ea")
-    sys.exit()
-
-model_path, is_poly = model_paths[sinav]
-tahmini_siralama = tahmin_et(model_path, net, is_polinomial=is_poly)
-
-print(f"Tahmini Sıralama ({sinav.upper()}): {tahmini_siralama:,}")
+# Test kodu
+if __name__ == "__main__":
+    test_cases = [
+        ("tyt", 80.5),
+        ("ayt_say", 65.25),
+        ("ayt_ea", 72.75),
+        ("ayt_soz", 58.5)
+    ]
+    
+    for sinav, net in test_cases:
+        try:
+            siralama = tahmin_yap(sinav, net)
+            print(f"{sinav.upper()} - Net: {net} -> Tahmini Sıralama: {siralama:,}")
+        except Exception as e:
+            print(f"HATA ({sinav}): {str(e)}")

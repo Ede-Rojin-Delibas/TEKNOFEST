@@ -1,76 +1,157 @@
 import pandas as pd
 import numpy as np
 import os
-import joblib
-
+import pickle
 from sklearn.linear_model import LinearRegression
-from sklearn.preprocessing import PolynomialFeatures
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
 from sklearn.ensemble import RandomForestRegressor
-from sklearn.metrics import mean_squared_error, r2_score
 from sklearn.pipeline import make_pipeline
+from sklearn.metrics import r2_score, mean_absolute_error, mean_squared_error
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.model_selection import GridSearchCV   
 
-# 3 farklı model oluşturup karşılaştırmak için fonksiyon
-def train_and_select_model(csv_path, model_name, save_folder="modeller"):
-    df = pd.read_csv(csv_path)
-
-    if "siralama" not in df.columns or df.shape[0] < 5:
-        print(f"{model_name} - Veri seti eksik veya yetersiz.")
-        return
-
-    # log dönüşümü (feature engineering)
-    df['log_siralama'] = np.log(df['siralama'])
-    X = df[['log_siralama']]
-    y = df.iloc[:, 1]  # ikinci sütun genelde net değeridir (tyt_net, ayt_net, vs.)
-
-    # Linear Regression
-    lr = LinearRegression()
-    lr.fit(X, y)
-    pred_lr = lr.predict(X)
-    mse_lr = mean_squared_error(y, pred_lr)
-    r2_lr = r2_score(y, pred_lr)
-    print(f"{model_name} doğruluk oranı: %{r2_lr*100:.2f}")
-
-    # Polynomial Regression (degree=2)
-    poly = make_pipeline(PolynomialFeatures(degree=2), LinearRegression())
-    poly.fit(X, y)
-    pred_poly = poly.predict(X)
-    mse_poly = mean_squared_error(y, pred_poly)
-    r2_poly = r2_score(y, pred_poly)
-    print(f"{model_name} doğruluk oranı: %{r2_poly*100:.2f}")
-
-    # Random Forest
-    rf = RandomForestRegressor(n_estimators=100, random_state=42)
-    rf.fit(X, y)
-    pred_rf = rf.predict(X)
-    mse_rf = mean_squared_error(y, pred_rf)
-    r2_rf = r2_score(y, pred_rf)
-    print(f"{model_name} doğruluk oranı: %{r2_rf*100:.2f}")
-
-    # Karşılaştırma ve en iyi modeli seçme
-    results = {
-        "Linear Regression": (lr, mse_lr, r2_lr),
-        "Polynomial Regression": (poly, mse_poly, r2_poly),
-        "Random Forest": (rf, mse_rf, r2_rf)
+# Model ve veri seti tanımları
+veri_kaynaklari = {
+    "tyt": {
+        "dosya": "veri_setleri/tyt.csv",
+        "model": make_pipeline(
+            StandardScaler(),
+            RandomForestRegressor(n_estimators=100,
+                                  max_depth=5, #derinliği sınırla
+                                  min_samples_leaf=3, #overfitting'i azalt.
+                                  random_state=42)
+        )
+    },
+    "ayt_sayisal": {
+        "dosya": "veri_setleri/ayt_sayisal.csv",
+        "model": make_pipeline(
+            StandardScaler(),
+            RandomForestRegressor(n_estimators=200,
+                                  max_depth=5, #derinliği sınırla
+                                  min_samples_leaf=3, #overfitting'i azalt.
+                                  random_state=42)
+        )
+    },
+    "ayt_sozel": {
+        "dosya": "veri_setleri/ayt_sozel.csv",
+        "model": make_pipeline(
+            StandardScaler(),
+            PolynomialFeatures(degree=2),
+            RandomForestRegressor(  # PolynomialFeatures yerine
+            n_estimators=50,    # Daha az ağaç
+            max_depth=3,        # Daha sığ ağaçlar
+            min_samples_leaf=2, # Daha az örnek
+            random_state=42
+            )
+        ),
+        "optimize":True #bu model için optimizasyon yapılacak
+    },
+    "ayt_ea": {
+        "dosya": "veri_setleri/ayt_ea.csv",
+        "model": make_pipeline(
+            StandardScaler(),
+            PolynomialFeatures(degree=2),
+            LinearRegression()
+        )
     }
+}
 
-    best_model_name = min(results, key=lambda name: results[name][1])
-    best_model, best_mse, best_r2 = results[best_model_name]
-
-    print(f"\n {model_name} için en iyi model: {best_model_name}")
-    print(f"   - MSE: {best_mse:.2f} | R²: {best_r2:.4f}")
-
-    os.makedirs(save_folder, exist_ok=True)
-    joblib.dump(best_model, f"{save_folder}/{model_name}.pkl")
+def optimize_sozel_model(X, y):
+    """AYT Sözel için en iyi parametreleri bulan fonksiyon"""
     
+    # Temel model pipeline
+    pipeline = make_pipeline(
+        StandardScaler(),
+        PolynomialFeatures(),
+        RandomForestRegressor()
+    )
+    
+    # Aranacak parametreler
+    param_grid = {
+        'randomforestregressor__n_estimators': [50, 100],
+        'randomforestregressor__max_depth': [2, 3, 4],
+        'randomforestregressor__min_samples_leaf': [1, 2, 3]
+    }
+    
+    grid_search = GridSearchCV(
+        pipeline,
+        param_grid,
+        cv=3,
+        scoring='neg_mean_absolute_error',  # MAE kullan
+        verbose=1,
+        n_jobs=-1
+    )
+    
+    grid_search.fit(X, y)
+    return grid_search.best_estimator_
 
+def model_egit_ve_degerlendir(X, y, model, sinav_turu):
+    # Veri seti çok küçükse cross-validation yerine tek split
+    if len(X) < 10:
+        test_size = 0.3
+    else:
+        test_size = 0.2
+    
+    X_train, X_test, y_train, y_test = train_test_split(
+        X, y, test_size=test_size, random_state=42
+    )
+    
+    # Model eğitimi
+    model.fit(X_train, y_train)
+    
+    # Test seti değerlendirmesi
+    y_pred = model.predict(X_test)
+    r2 = r2_score(y_test, y_pred)
+    mae = mean_absolute_error(y_test, y_pred)
+    rmse = np.sqrt(mean_squared_error(y_test, y_pred))
+    
+    print(f"\nTest seti değerlendirmesi:")
+    print(f"R² skoru: {r2:.4f}")
+    print(f"Ortalama Mutlak Hata (MAE): {mae:.4f}")
+    print(f"Kök Ortalama Kare Hata (RMSE): {rmse:.4f}")
+    
+    return model
 
-# Tüm modelleri sırayla eğitiyoruz
-models_to_train = [
-    ("veriler/tyt.csv", "tyt"),
-    ("veriler/ayt_sayisal.csv", "ayt_sayisal"),
-    ("veriler/ayt_sozel.csv", "ayt_sozel"),
-    ("veriler/ayt_ea_processed.csv", "ayt_ea"),
-]
+# Ana döngü
+if not os.path.exists("modeller"):
+    os.makedirs("modeller")
 
-for path, name in models_to_train:
-    train_and_select_model(path, name)
+for ad, bilgiler in veri_kaynaklari.items():
+    try:
+        print(f"\n{ad.upper()} modeli eğitiliyor...")
+        
+        # Veri yükleme
+        veri = pd.read_csv(bilgiler["dosya"])
+        print(f"\n{ad} Veri Seti Analizi:")
+        print(f"Örnek sayısı: {len(veri)}")
+        print(f"Toplam net aralığı: {veri['toplam_net'].min()} - {veri['toplam_net'].max()}")
+        print(f"Sıralama aralığı: {veri['siralama'].min()} - {veri['siralama'].max()}")
+        
+        if "toplam_net" not in veri.columns:
+            raise ValueError(f"{ad} veri setinde 'toplam_net' sütunu bulunamadı")
+        
+        # Özellik ve hedef hazırlama
+        X = veri[["toplam_net"]].values.reshape(-1, 1)  # 2D array gerekli
+        y = veri["siralama"]
+        
+        # Model eğitimi ve değerlendirme
+        if ad == "ayt_sozel" and bilgiler.get("optimize", False):
+            print("\nAYT Sözel için parametre optimizasyonu yapılıyor...")
+            model = optimize_sozel_model(X, y)
+        else:
+            model = bilgiler["model"]
+        
+        # Model eğitimi ve değerlendirme
+        model = model_egit_ve_degerlendir(X, y, model, ad)
+        
+        # Model kaydetme
+        model_dosya_yolu = f"modeller/{ad}_model.pkl"
+        with open(model_dosya_yolu, "wb") as f:
+            pickle.dump(model, f)
+        print(f"\nModel kaydedildi: {model_dosya_yolu}")
+        
+    except Exception as e:
+        print(f"\nHATA - {ad}: {str(e)}")
+        continue
+
+print("\nTüm modeller eğitildi ve kaydedildi.")
