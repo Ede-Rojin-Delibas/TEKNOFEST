@@ -1,0 +1,18 @@
+{
+    "tyt": {
+        "ornek_sayisi": 29611,
+        "model_yolu": "modeller\\tyt_model.pkl"
+    },
+    "ayt_sayisal": {
+        "ornek_sayisi": 12995,
+        "model_yolu": "modeller\\ayt_sayisal_model.pkl"
+    },
+    "ayt_sozel": {
+        "ornek_sayisi": 9633,
+        "model_yolu": "modeller\\ayt_sozel_model.pkl"
+    },
+    "ayt_ea": {
+        "ornek_sayisi": 9633,
+        "model_yolu": "modeller\\ayt_ea_model.pkl"
+    }
+}
