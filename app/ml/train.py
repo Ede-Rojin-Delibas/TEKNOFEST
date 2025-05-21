@@ -66,6 +66,18 @@ VERI_KAYNAKLARI = {
             PolynomialFeatures(degree=2),
             LinearRegression()
         )
+    },
+    "ayt_dil": {
+        "dosya": "data/veri_setleri/ayt_dil_veri_seti.csv",
+        "model": make_pipeline(
+            StandardScaler(),
+            RandomForestRegressor(
+                n_estimators=100,
+                max_depth=4,
+                min_samples_leaf=2,
+                random_state=42
+            )
+        )
     }
 }
 
@@ -156,6 +168,8 @@ def veri_dogrulama_ve_onisleme(veri, sinav_turu):
         ders_sutunlari = ["ayt_matematik", "ayt_edebiyat", "ayt_cografya1"]
     elif sinav_turu == "ayt_sozel":
         ders_sutunlari = ["ayt_edebiyat", "ayt_tarih1", "ayt_cografya1", "ayt_tarih2", "ayt_cografya2", "ayt_felsefe", "ayt_din_kulturu"]
+    elif sinav_turu == "ayt_dil":
+        ders_sutunlari = ["ayt_dil"]
     else:
         raise ValueError(f"Geçersiz sınav türü: {sinav_turu}")
     

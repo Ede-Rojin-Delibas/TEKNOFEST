@@ -14,5 +14,9 @@
     "ayt_ea": {
         "ornek_sayisi": 9633,
         "model_yolu": "modeller\\ayt_ea_model.pkl"
+    },
+    "ayt_dil": {
+        "ornek_sayisi": 4330,
+        "model_yolu": "modeller\\ayt_dil_model.pkl"
     }
 }

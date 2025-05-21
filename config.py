@@ -3,7 +3,7 @@ class Config:
     DATA_PATH = "data/veri_setleri"
     DEBUG = False
     TESTING = False
-    ALLOWED_EXAM_TYPES = ["tyt", "ayt_ea", "ayt_say", "ayt_soz"]
+    ALLOWED_EXAM_TYPES = ["tyt", "ayt_ea", "ayt_say", "ayt_soz", "ayt_dil"]
 class DevelopmentConfig(Config):
     DEBUG = True
 

@@ -20,6 +20,16 @@ class SinavTahminTestCase(unittest.TestCase):
                         "tyt_fen": {"dogru": 15, "yanlis": 5}
                     },
                     "hedef_siralama": 10000
+                },
+                "hacettepe_psikoloji": {
+                    "sinav_turu": "tyt",
+                    "dogru_yanlis": {
+                        "tyt_turkce": {"dogru": 38, "yanlis": 2},
+                        "tyt_matematik": {"dogru": 35, "yanlis": 5},
+                        "tyt_sosyal": {"dogru": 17, "yanlis": 3},
+                        "tyt_fen": {"dogru": 17, "yanlis": 3}
+                    },
+                    "hedef_siralama": 5000
                 }
             },
             "ayt_say": {
@@ -54,11 +64,35 @@ class SinavTahminTestCase(unittest.TestCase):
                     "sinav_turu": "ayt_ea",
                     "dogru_yanlis": {
                         "ayt_matematik": {"dogru": 35, "yanlis": 5},
-                        "ayt_turkce": {"dogru": 35, "yanlis": 5},
-                        "ayt_tarih1": {"dogru": 15, "yanlis": 5},
+                        "ayt_edebiyat": {"dogru": 35, "yanlis": 5},
                         "ayt_cografya1": {"dogru": 15, "yanlis": 5}
                     },
                     "hedef_siralama": 5000
+                },
+                "hacettepe_psikoloji": {
+                    "sinav_turu": "ayt_ea",
+                    "dogru_yanlis": {
+                        "ayt_matematik": {"dogru": 38, "yanlis": 2},
+                        "ayt_edebiyat": {"dogru": 38, "yanlis": 2},
+                        "ayt_cografya1": {"dogru": 17, "yanlis": 3}
+                    },
+                    "hedef_siralama": 5000
+                }
+            },
+            "ayt_dil": {
+                "normal": {
+                    "sinav_turu": "ayt_dil",
+                    "dogru_yanlis": {
+                        "ayt_dil": {"dogru": 75, "yanlis": 5}
+                    },
+                    "hedef_siralama": 5000
+                },
+                "hacettepe_dil": {
+                    "sinav_turu": "ayt_dil",
+                    "dogru_yanlis": {
+                        "ayt_dil": {"dogru": 78, "yanlis": 2}
+                    },
+                    "hedef_siralama": 2000
                 }
             }
         }
@@ -92,6 +126,7 @@ class SinavTahminTestCase(unittest.TestCase):
                     print(f"Net: {data['net']['toplam']}")
                     print(f"Tahmini Sıralama: {data['siralama']['tahmini']:,}")
                     print(f"Hedef ile Fark: {data['siralama']['fark']:,}")
+                    print(f"Değerlendirme: {data['siralama']['degerlendirme']}")
 
 if __name__ == '__main__':
     unittest.main()
