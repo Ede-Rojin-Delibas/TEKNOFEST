@@ -33,7 +33,7 @@ VERI_KAYNAKLARI = {
             )
         )
     },
-    "ayt_sayisal": {
+    "ayt_say": {
         "dosya": "data/veri_setleri/ayt_sayisal_veri_seti.csv",
         "model": make_pipeline(
             StandardScaler(),
@@ -162,7 +162,7 @@ def veri_dogrulama_ve_onisleme(veri, sinav_turu):
     # Sınav türüne göre ders sütunlarını belirle
     if sinav_turu == "tyt":
         ders_sutunlari = ["tyt_turkce", "tyt_matematik", "tyt_sosyal", "tyt_fen"]
-    elif sinav_turu == "ayt_sayisal":
+    elif sinav_turu == "ayt_say":
         ders_sutunlari = ["ayt_matematik", "ayt_kimya", "ayt_biyoloji", "ayt_fizik"]
     elif sinav_turu == "ayt_ea":
         ders_sutunlari = ["ayt_matematik", "ayt_edebiyat", "ayt_cografya1"]

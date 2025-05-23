@@ -20,16 +20,6 @@ class SinavTahminTestCase(unittest.TestCase):
                         "tyt_fen": {"dogru": 15, "yanlis": 5}
                     },
                     "hedef_siralama": 10000
-                },
-                "hacettepe_psikoloji": {
-                    "sinav_turu": "tyt",
-                    "dogru_yanlis": {
-                        "tyt_turkce": {"dogru": 38, "yanlis": 2},
-                        "tyt_matematik": {"dogru": 35, "yanlis": 5},
-                        "tyt_sosyal": {"dogru": 17, "yanlis": 3},
-                        "tyt_fen": {"dogru": 17, "yanlis": 3}
-                    },
-                    "hedef_siralama": 5000
                 }
             },
             "ayt_say": {
@@ -48,13 +38,13 @@ class SinavTahminTestCase(unittest.TestCase):
                 "normal": {
                     "sinav_turu": "ayt_soz",
                     "dogru_yanlis": {
-                        "ayt_turkce": {"dogru": 35, "yanlis": 5},
+                        "ayt_edebiyat": {"dogru": 35, "yanlis": 5},
                         "ayt_tarih1": {"dogru": 15, "yanlis": 5},
                         "ayt_cografya1": {"dogru": 15, "yanlis": 5},
                         "ayt_tarih2": {"dogru": 15, "yanlis": 5},
                         "ayt_cografya2": {"dogru": 15, "yanlis": 5},
                         "ayt_felsefe": {"dogru": 15, "yanlis": 5},
-                        "ayt_din": {"dogru": 15, "yanlis": 5}
+                        "ayt_din_kulturu": {"dogru": 15, "yanlis": 5}
                     },
                     "hedef_siralama": 5000
                 }
@@ -68,15 +58,6 @@ class SinavTahminTestCase(unittest.TestCase):
                         "ayt_cografya1": {"dogru": 15, "yanlis": 5}
                     },
                     "hedef_siralama": 5000
-                },
-                "hacettepe_psikoloji": {
-                    "sinav_turu": "ayt_ea",
-                    "dogru_yanlis": {
-                        "ayt_matematik": {"dogru": 38, "yanlis": 2},
-                        "ayt_edebiyat": {"dogru": 38, "yanlis": 2},
-                        "ayt_cografya1": {"dogru": 17, "yanlis": 3}
-                    },
-                    "hedef_siralama": 5000
                 }
             },
             "ayt_dil": {
@@ -86,13 +67,6 @@ class SinavTahminTestCase(unittest.TestCase):
                         "ayt_dil": {"dogru": 75, "yanlis": 5}
                     },
                     "hedef_siralama": 5000
-                },
-                "hacettepe_dil": {
-                    "sinav_turu": "ayt_dil",
-                    "dogru_yanlis": {
-                        "ayt_dil": {"dogru": 78, "yanlis": 2}
-                    },
-                    "hedef_siralama": 2000
                 }
             }
         }

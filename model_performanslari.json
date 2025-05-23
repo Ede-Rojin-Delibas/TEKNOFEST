@@ -3,9 +3,9 @@
         "ornek_sayisi": 29611,
         "model_yolu": "modeller\\tyt_model.pkl"
     },
-    "ayt_sayisal": {
+    "ayt_say": {
         "ornek_sayisi": 12995,
-        "model_yolu": "modeller\\ayt_sayisal_model.pkl"
+        "model_yolu": "modeller\\ayt_say_model.pkl"
     },
     "ayt_sozel": {
         "ornek_sayisi": 9633,

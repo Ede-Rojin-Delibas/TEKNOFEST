@@ -49,7 +49,7 @@ def toplam_net_hesapla(sinav_turu, netler):
     elif sinav_turu == "ayt_ea":
         dersler = ["ayt_matematik", "ayt_edebiyat", "ayt_cografya1"]
     elif sinav_turu == "ayt_soz":
-        dersler = ["ayt_turkce", "ayt_tarih1", "ayt_cografya1", "ayt_tarih2", "ayt_cografya2", "ayt_felsefe", "ayt_din"]
+        dersler = ["ayt_edebiyat", "ayt_tarih1", "ayt_cografya1", "ayt_tarih2", "ayt_cografya2", "ayt_felsefe", "ayt_din_kulturu"]
     elif sinav_turu == "ayt_dil":
         dersler = ["ayt_dil"]
     else:

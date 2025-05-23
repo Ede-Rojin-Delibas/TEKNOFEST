@@ -8,6 +8,10 @@ from config import Config
 # Geçerli sınav türlerini config'den al
 GECERLI_SINAV_TURLERI = Config.ALLOWED_EXAM_TYPES
 
+@bp.route('/', methods=['GET'])
+def index():
+    return jsonify({"status": "API is running"})
+
 @bp.route('/tahmin', methods=['POST'])
 def tahmin_et():
     data = request.get_json()
