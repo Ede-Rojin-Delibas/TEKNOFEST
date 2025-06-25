@@ -1,0 +1,57 @@
+{
+    "tyt": {
+        "ornek_sayisi": 84351,
+        "model_yolu": "data/models/v3\\tyt_model.joblib",
+        "performans": {
+            "egitim_r2": 0.8698519439668233,
+            "egitim_mae": 155745.03696148063,
+            "test_r2": 0.8707586507393206,
+            "test_mae": 155839.85210283333,
+            "test_rmse": 255840.33139436186
+        }
+    },
+    "ayt_ea": {
+        "ornek_sayisi": 9773,
+        "model_yolu": "data/models/v3\\ayt_ea_model.joblib",
+        "performans": {
+            "egitim_r2": 0.9391406134336349,
+            "egitim_mae": 75576.98645882044,
+            "test_r2": 0.943847066127944,
+            "test_mae": 72661.57178668094,
+            "test_rmse": 108818.07849702344
+        }
+    },
+    "ayt_sayisal": {
+        "ornek_sayisi": 12995,
+        "model_yolu": "data/models/v3\\ayt_sayisal_model.joblib",
+        "performans": {
+            "egitim_r2": 0.9260894725677178,
+            "egitim_mae": 38445.84834016837,
+            "test_r2": 0.925905890045649,
+            "test_mae": 37754.7585474148,
+            "test_rmse": 62016.12195641817
+        }
+    },
+    "ayt_sozel": {
+        "ornek_sayisi": 9773,
+        "model_yolu": "data/models/v3\\ayt_sozel_model.joblib",
+        "performans": {
+            "egitim_r2": 0.8876760727800146,
+            "egitim_mae": 108059.64978415963,
+            "test_r2": 0.8938683562837134,
+            "test_mae": 103819.0436416572,
+            "test_rmse": 149601.95606650956
+        }
+    },
+    "ayt_dil": {
+        "ornek_sayisi": 6860,
+        "model_yolu": "data/models/v3\\ayt_dil_model.joblib",
+        "performans": {
+            "egitim_r2": 0.4676975377601804,
+            "egitim_mae": 16496.015881693536,
+            "test_r2": 0.4675329137265434,
+            "test_mae": 17026.886990388284,
+            "test_rmse": 26766.562262693635
+        }
+    }
+}

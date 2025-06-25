@@ -1,0 +1,26 @@
+{
+    "model": "VotingRegressor(estimators=[('rf',\n                             Pipeline(steps=[('scaler', RobustScaler()),\n                                             ('rf',\n                                              RandomForestRegressor(max_depth=8,\n                                                                    min_samples_leaf=3,\n                                                                    n_estimators=200,\n                                                                    n_jobs=-1,\n                                                                    random_state=42))])),\n                            ('gb',\n                             Pipeline(steps=[('scaler', RobustScaler()),\n                                             ('gb',\n                                              GradientBoostingRegressor(learning_rate=0.05,\n                                                                        max_depth=6,\n                                                                        n_estimators=300,\n                                                                        random_state=42,\n                                                                        subsample=0.8))]))],\n                weights=[0.4, 0.6])",
+    "sonuclar": {
+        "rf": {
+            "mae": 91784.59768267193,
+            "rmse": 148976.25366887727,
+            "r2": 0.6376767236694316
+        },
+        "gb": {
+            "mae": 75774.73942323841,
+            "rmse": 122667.06583270039,
+            "r2": 0.7543492516066307
+        },
+        "ensemble": {
+            "mae": 81263.83075135644,
+            "rmse": 130912.95821041048,
+            "r2": 0.7202130780302464
+        }
+    },
+    "cv_mae": 104309.70169724722,
+    "veri_boyutlari": {
+        "toplam": 75602,
+        "egitim": 60481,
+        "test": 15121
+    }
+}

@@ -1,1 +1,0 @@
-#test senaryoları, konfigürasyon ayarları

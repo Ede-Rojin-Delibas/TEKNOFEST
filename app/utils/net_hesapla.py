@@ -37,18 +37,18 @@ def toplam_net_hesapla(sinav_turu, netler):
     """
     Ders bazında netleri toplayarak toplam neti döndürür.
     Args:
-        sinav_turu (str): Sınav türü ('tyt', 'ayt_ea', 'ayt_say', 'ayt_soz', 'ayt_dil')
+        sinav_turu (str): Sınav türü ('tyt', 'ayt_ea', 'ayt_sayisal', 'ayt_sozel', 'ayt_dil')
         netler (dict): {'ayt_matematik': 30, ...}
     Returns:
         float: Toplam net
     """
     if sinav_turu == "tyt":
         dersler = ["tyt_turkce", "tyt_matematik", "tyt_sosyal", "tyt_fen"]
-    elif sinav_turu == "ayt_say":
+    elif sinav_turu == "ayt_sayisal":
         dersler = ["ayt_matematik", "ayt_kimya", "ayt_biyoloji", "ayt_fizik"]
     elif sinav_turu == "ayt_ea":
         dersler = ["ayt_matematik", "ayt_edebiyat", "ayt_cografya1"]
-    elif sinav_turu == "ayt_soz":
+    elif sinav_turu == "ayt_sozel":
         dersler = ["ayt_edebiyat", "ayt_tarih1", "ayt_cografya1", "ayt_tarih2", "ayt_cografya2", "ayt_felsefe", "ayt_din_kulturu"]
     elif sinav_turu == "ayt_dil":
         dersler = ["ayt_dil"]

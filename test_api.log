@@ -1,0 +1,149 @@
+2025-06-25 07:55:00,770 - INFO - 
+TYT Model Performans Deðerlendirmesi
+2025-06-25 07:55:00,789 - INFO - --------------------------------------------------
+2025-06-25 07:55:03,588 - INFO - 
+Test Verisi:
+2025-06-25 07:55:03,596 - INFO - Net: 100.00
+2025-06-25 07:55:03,596 - INFO - Tahmini Sýralama: 9,077
+2025-06-25 07:55:03,596 - INFO - Hedef Sýralama: 2,000
+2025-06-25 07:55:03,596 - INFO - Fark: 7,077
+2025-06-25 07:55:03,596 - INFO - Deðerlendirme: Hedefinize ulaþmak için daha fazla çalýþmalýsýnýz.
+2025-06-25 07:55:06,612 - INFO - 
+Test Verisi:
+2025-06-25 07:55:06,612 - INFO - Net: 82.50
+2025-06-25 07:55:06,612 - INFO - Tahmini Sýralama: 87,217
+2025-06-25 07:55:06,612 - INFO - Hedef Sýralama: 35,000
+2025-06-25 07:55:06,612 - INFO - Fark: 52,217
+2025-06-25 07:55:06,612 - INFO - Deðerlendirme: Hedefinize ulaþmak için daha fazla çalýþmalýsýnýz.
+2025-06-25 07:55:09,131 - INFO - 
+Test Verisi:
+2025-06-25 07:55:09,131 - INFO - Net: 56.25
+2025-06-25 07:55:09,131 - INFO - Tahmini Sýralama: 268,735
+2025-06-25 07:55:09,131 - INFO - Hedef Sýralama: 400,000
+2025-06-25 07:55:09,131 - INFO - Fark: 131,265
+2025-06-25 07:55:09,131 - INFO - Deðerlendirme: Hedefinizin üzerindesiniz, tebrikler!
+2025-06-25 07:55:11,466 - INFO - 
+Test Verisi:
+2025-06-25 07:55:11,466 - INFO - Net: 21.00
+2025-06-25 07:55:11,466 - INFO - Tahmini Sýralama: 800,000
+2025-06-25 07:55:11,466 - INFO - Hedef Sýralama: 1,200,000
+2025-06-25 07:55:11,466 - INFO - Fark: 400,000
+2025-06-25 07:55:11,466 - INFO - Deðerlendirme: Hedefinizin üzerindesiniz, tebrikler!
+2025-06-25 07:55:11,473 - INFO - 
+Model Performans Metrikleri:
+2025-06-25 07:55:11,473 - INFO - Ortalama Mutlak Hata (MAE): 147,639.75
+2025-06-25 07:55:11,474 - INFO - Kök Ortalama Kare Hata (RMSE): 212,136.28
+2025-06-25 07:55:11,474 - INFO - R² Skoru: 0.8067
+2025-06-25 07:55:11,475 - INFO - Ortalama Hata Yüzdesi: 142.30%
+2025-06-25 07:55:11,475 - INFO - 
+Genel Performans Deðerlendirmesi: Ýyileþtirilmeli
+2025-06-25 07:55:11,486 - INFO - 
+Sonuçlar 'test_sonuclari_tyt.csv' dosyasýna kaydedildi.
+2025-06-25 07:55:11,486 - INFO - 
+AYT_SAYISAL Model Performans Deðerlendirmesi
+2025-06-25 07:55:11,486 - INFO - --------------------------------------------------
+2025-06-25 07:55:13,842 - INFO - 
+Test Verisi:
+2025-06-25 07:55:13,842 - INFO - Net: 68.75
+2025-06-25 07:55:13,842 - INFO - Tahmini Sýralama: 15,273
+2025-06-25 07:55:13,842 - INFO - Hedef Sýralama: 40,000
+2025-06-25 07:55:13,842 - INFO - Fark: 24,727
+2025-06-25 07:55:13,842 - INFO - Deðerlendirme: Hedefinizin üzerindesiniz, tebrikler!
+2025-06-25 07:55:16,270 - INFO - 
+Test Verisi:
+2025-06-25 07:55:16,270 - INFO - Net: 49.75
+2025-06-25 07:55:16,270 - INFO - Tahmini Sýralama: 86,586
+2025-06-25 07:55:16,270 - INFO - Hedef Sýralama: 150,000
+2025-06-25 07:55:16,270 - INFO - Fark: 63,414
+2025-06-25 07:55:16,270 - INFO - Deðerlendirme: Hedefinizin üzerindesiniz, tebrikler!
+2025-06-25 07:55:16,273 - INFO - 
+Model Performans Metrikleri:
+2025-06-25 07:55:16,273 - INFO - Ortalama Mutlak Hata (MAE): 44,070.50
+2025-06-25 07:55:16,277 - INFO - Kök Ortalama Kare Hata (RMSE): 48,128.79
+2025-06-25 07:55:16,277 - INFO - R² Skoru: 0.2343
+2025-06-25 07:55:16,277 - INFO - Ortalama Hata Yüzdesi: 52.05%
+2025-06-25 07:55:16,277 - INFO - 
+Genel Performans Deðerlendirmesi: Ýyileþtirilmeli
+2025-06-25 07:55:16,278 - INFO - 
+Sonuçlar 'test_sonuclari_ayt_sayisal.csv' dosyasýna kaydedildi.
+2025-06-25 07:55:16,283 - INFO - 
+AYT_EA Model Performans Deðerlendirmesi
+2025-06-25 07:55:16,283 - INFO - --------------------------------------------------
+2025-06-25 07:55:18,370 - INFO - 
+Test Verisi:
+2025-06-25 07:55:18,370 - INFO - Net: 71.25
+2025-06-25 07:55:18,374 - INFO - Tahmini Sýralama: 12,449
+2025-06-25 07:55:18,374 - INFO - Hedef Sýralama: 30,000
+2025-06-25 07:55:18,374 - INFO - Fark: 17,551
+2025-06-25 07:55:18,374 - INFO - Deðerlendirme: Hedefinizin üzerindesiniz, tebrikler!
+2025-06-25 07:55:20,489 - INFO - 
+Test Verisi:
+2025-06-25 07:55:20,489 - INFO - Net: 51.75
+2025-06-25 07:55:20,489 - INFO - Tahmini Sýralama: 30,451
+2025-06-25 07:55:20,494 - INFO - Hedef Sýralama: 120,000
+2025-06-25 07:55:20,494 - INFO - Fark: 89,549
+2025-06-25 07:55:20,498 - INFO - Deðerlendirme: Hedefinizin üzerindesiniz, tebrikler!
+2025-06-25 07:55:20,505 - INFO - 
+Model Performans Metrikleri:
+2025-06-25 07:55:20,505 - INFO - Ortalama Mutlak Hata (MAE): 53,550.00
+2025-06-25 07:55:20,505 - INFO - Kök Ortalama Kare Hata (RMSE): 64,525.43
+2025-06-25 07:55:20,505 - INFO - R² Skoru: -1.0561
+2025-06-25 07:55:20,505 - INFO - Ortalama Hata Yüzdesi: 66.56%
+2025-06-25 07:55:20,505 - INFO - 
+Genel Performans Deðerlendirmesi: Ýyileþtirilmeli
+2025-06-25 07:55:20,514 - INFO - 
+Sonuçlar 'test_sonuclari_ayt_ea.csv' dosyasýna kaydedildi.
+2025-06-25 07:55:20,514 - INFO - 
+AYT_SOZEL Model Performans Deðerlendirmesi
+2025-06-25 07:55:20,514 - INFO - --------------------------------------------------
+2025-06-25 07:55:22,592 - INFO - 
+Test Verisi:
+2025-06-25 07:55:22,592 - INFO - Net: 71.25
+2025-06-25 07:55:22,601 - INFO - Tahmini Sýralama: 1
+2025-06-25 07:55:22,601 - INFO - Hedef Sýralama: 25,000
+2025-06-25 07:55:22,601 - INFO - Fark: 24,999
+2025-06-25 07:55:22,601 - INFO - Deðerlendirme: Hedefinizin üzerindesiniz, tebrikler!
+2025-06-25 07:55:24,682 - INFO - 
+Test Verisi:
+2025-06-25 07:55:24,682 - INFO - Net: 55.00
+2025-06-25 07:55:24,682 - INFO - Tahmini Sýralama: 148,767
+2025-06-25 07:55:24,690 - INFO - Hedef Sýralama: 100,000
+2025-06-25 07:55:24,690 - INFO - Fark: 48,767
+2025-06-25 07:55:24,690 - INFO - Deðerlendirme: Hedefinize ulaþmak için daha fazla çalýþmalýsýnýz.
+2025-06-25 07:55:24,703 - INFO - 
+Model Performans Metrikleri:
+2025-06-25 07:55:24,703 - INFO - Ortalama Mutlak Hata (MAE): 36,883.00
+2025-06-25 07:55:24,703 - INFO - Kök Ortalama Kare Hata (RMSE): 38,750.29
+2025-06-25 07:55:24,703 - INFO - R² Skoru: -0.0678
+2025-06-25 07:55:24,709 - INFO - Ortalama Hata Yüzdesi: 74.38%
+2025-06-25 07:55:24,709 - INFO - 
+Genel Performans Deðerlendirmesi: Ýyileþtirilmeli
+2025-06-25 07:55:24,712 - INFO - 
+Sonuçlar 'test_sonuclari_ayt_sozel.csv' dosyasýna kaydedildi.
+2025-06-25 07:55:24,717 - INFO - 
+AYT_DIL Model Performans Deðerlendirmesi
+2025-06-25 07:55:24,717 - INFO - --------------------------------------------------
+2025-06-25 07:55:26,850 - INFO - 
+Test Verisi:
+2025-06-25 07:55:26,850 - INFO - Net: 73.75
+2025-06-25 07:55:26,850 - INFO - Tahmini Sýralama: 13,202
+2025-06-25 07:55:26,850 - INFO - Hedef Sýralama: 10,000
+2025-06-25 07:55:26,850 - INFO - Fark: 3,202
+2025-06-25 07:55:26,850 - INFO - Deðerlendirme: Hedefinize ulaþmak için daha fazla çalýþmalýsýnýz.
+2025-06-25 07:55:28,947 - INFO - 
+Test Verisi:
+2025-06-25 07:55:28,947 - INFO - Net: 56.25
+2025-06-25 07:55:28,947 - INFO - Tahmini Sýralama: 46,406
+2025-06-25 07:55:28,947 - INFO - Hedef Sýralama: 40,000
+2025-06-25 07:55:28,947 - INFO - Fark: 6,406
+2025-06-25 07:55:28,947 - INFO - Deðerlendirme: Hedefinize yaklaþýyorsunuz, biraz daha gayret!
+2025-06-25 07:55:28,955 - INFO - 
+Model Performans Metrikleri:
+2025-06-25 07:55:28,955 - INFO - Ortalama Mutlak Hata (MAE): 4,804.00
+2025-06-25 07:55:28,958 - INFO - Kök Ortalama Kare Hata (RMSE): 5,064.07
+2025-06-25 07:55:28,958 - INFO - R² Skoru: 0.8860
+2025-06-25 07:55:28,958 - INFO - Ortalama Hata Yüzdesi: 24.02%
+2025-06-25 07:55:28,958 - INFO - 
+Genel Performans Deðerlendirmesi: Ýyi
+2025-06-25 07:55:28,958 - INFO - 
+Sonuçlar 'test_sonuclari_ayt_dil.csv' dosyasýna kaydedildi.

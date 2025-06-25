@@ -1,9 +1,1 @@
-from app.ml.train import train_models
-
-def init_models():
-    """Modelleri eğit veya yükle"""
-    try:
-        train_models()
-    except Exception as e:
-        print(f"Model eğitimi hatası: {str(e)}")
-        raise
+# This file is intentionally left blank to mark the directory as a Python package.
