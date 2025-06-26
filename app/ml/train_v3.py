@@ -52,7 +52,10 @@ PARAMS = {
         "target": "basari_sirasi"
     },
     "ayt_sozel": {
-        "features": ["ayt_edebiyat", "ayt_cografya1"],
+        "features": [
+            "ayt_edebiyat", "ayt_cografya1", "ayt_tarih1", "ayt_tarih2", 
+            "ayt_cografya2", "ayt_felsefe", "ayt_din"
+        ],
         "target": "basari_sirasi"
     },
     "ayt_dil": {
@@ -147,13 +150,18 @@ class ModelEgitici:
             "ayt_sozel": {
                 "model": make_pipeline(
                     RobustScaler(),
-                    PolynomialFeatures(degree=2),
-                    Ridge()
+                    RandomForestRegressor(
+                        n_estimators=100,
+                        random_state=42,
+                        n_jobs=-1,
+                        verbose=0
+                    )
                 ),
                 "optimize": True,
                 "parametre_araligi": {
-                    'polynomialfeatures__degree': [2, 3],
-                    'ridge__alpha': [0.1, 0.5, 1.0, 5.0, 10.0]
+                    'randomforestregressor__n_estimators': [100, 150],
+                    'randomforestregressor__max_depth': [5, 7, 10],
+                    'randomforestregressor__min_samples_leaf': [2, 4]
                 }
             },
             "ayt_dil": {
@@ -189,8 +197,8 @@ class ModelEgitici:
             "tyt": "tyt_veri_seti_artirilmis_cleaned_filtered_filtered.csv",
             "ayt_sayisal": "ayt_sayisal_veri_seti_artirilmis_cleaned_filtered_filtered.csv",
             "ayt_ea": "ayt_ea_veri_seti_artirilmis_cleaned_cleaned_filtered.csv",
-            "ayt_sozel": "ayt_sozel_veri_seti_artirilmis_cleaned_cleaned_filtered.csv",
-            "ayt_dil": "ayt_dil_veri_seti_artirilmis_cleaned_cleaned_filtered.csv"
+            "ayt_sozel": "ayt_sozel_veri_seti_doldurulmus.csv",
+            "ayt_dil": "ayt_dil_veri_seti_doldurulmus.csv"
         }
         
         dosya_adi = dosya_eslestirme.get(sinav_turu)

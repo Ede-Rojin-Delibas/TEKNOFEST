@@ -219,10 +219,15 @@ def tahmin_yap(sinav_turu: str, dogru_yanlis: Dict[str, Dict[str, int]], hedef_s
                     ders_netleri.get("ayt_cografya1", 0)
                 ]])
             elif sinav_turu == "ayt_sozel":
-                # AYT Sözel: Edebiyat, Coğrafya1
+                # AYT Sözel: Tüm sözel dersleri içerir
                 X = np.array([[
                     ders_netleri.get("ayt_edebiyat", 0),
-                    ders_netleri.get("ayt_cografya1", 0)
+                    ders_netleri.get("ayt_cografya1", 0),
+                    ders_netleri.get("ayt_tarih1", 0),
+                    ders_netleri.get("ayt_tarih2", 0),
+                    ders_netleri.get("ayt_cografya2", 0),
+                    ders_netleri.get("ayt_felsefe", 0),
+                    ders_netleri.get("ayt_din", 0)
                 ]])
             elif sinav_turu == "ayt_dil":
                 # AYT Dil: Sadece dil neti

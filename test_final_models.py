@@ -116,8 +116,13 @@ def test_ayt_sozel():
     test_data = {
         "sinav_turu": "ayt_sozel",
         "dogru_yanlis": {
-            "ayt_edebiyat": {"dogru": 20, "yanlis": 4},      # 24 soru
-            "ayt_cografya1": {"dogru": 5, "yanlis": 1}       # 6 soru
+            "ayt_edebiyat": {"dogru": 20, "yanlis": 4},
+            "ayt_tarih1": {"dogru": 7, "yanlis": 3},
+            "ayt_cografya1": {"dogru": 5, "yanlis": 1},
+            "ayt_tarih2": {"dogru": 8, "yanlis": 2},
+            "ayt_cografya2": {"dogru": 9, "yanlis": 2},
+            "ayt_felsefe": {"dogru": 8, "yanlis": 4},
+            "ayt_din": {"dogru": 4, "yanlis": 2}
         },
         "hedef_siralama": 20000
     }

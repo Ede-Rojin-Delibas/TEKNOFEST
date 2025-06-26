@@ -1,158 +1,153 @@
-2025-06-24 17:42:21,099 - INFO - Model eðitimi baþlatýlýyor: 2025-06-24 17:42:21.099211
-2025-06-24 17:42:21,100 - INFO - 
+2025-06-26 10:59:29,053 - INFO - Model eðitimi baþlatýlýyor: 2025-06-26 10:59:29.053865
+2025-06-26 10:59:29,053 - INFO - 
 ==================== TYT ÝÞLEMÝ BAÞLATILIYOR ====================
-2025-06-24 17:42:21,163 - INFO - tyt veri seti yüklendi. Boyut: (75602, 4)
-2025-06-24 17:42:21,164 - INFO - tyt model eðitimi baþlatýlýyor
-2025-06-24 17:42:21,164 - INFO - 
+2025-06-26 10:59:29,124 - INFO - tyt veri seti yüklendi. Boyut: (75602, 4)
+2025-06-26 10:59:29,124 - INFO - tyt model eðitimi baþlatýlýyor
+2025-06-26 10:59:29,124 - INFO - 
 tyt için parametre optimizasyonu baþlatýlýyor
-2025-06-24 17:42:21,165 - INFO - Test edilecek parametre kombinasyonlarý: {'gradientboostingregressor__n_estimators': [150, 200], 'gradientboostingregressor__max_depth': [3, 4], 'gradientboostingregressor__learning_rate': [0.05], 'polynomialfeatures__degree': [2]}
-2025-06-24 17:46:18,320 - INFO - Optimizasyon tamamlandý. Süre: 0:03:57.154604
-2025-06-24 17:46:18,321 - INFO - En iyi parametreler: {'gradientboostingregressor__learning_rate': 0.05, 'gradientboostingregressor__max_depth': 4, 'gradientboostingregressor__n_estimators': 200, 'polynomialfeatures__degree': 2}
-2025-06-24 17:46:18,321 - INFO - En iyi skor: 150142.0048
-2025-06-24 17:48:51,580 - INFO - 
+2025-06-26 10:59:29,125 - INFO - Test edilecek parametre kombinasyonlarý: {'gradientboostingregressor__n_estimators': [150, 200], 'gradientboostingregressor__max_depth': [3, 4], 'gradientboostingregressor__learning_rate': [0.05], 'polynomialfeatures__degree': [2]}
+2025-06-26 11:03:32,218 - INFO - Optimizasyon tamamlandý. Süre: 0:04:03.091599
+2025-06-26 11:03:32,219 - INFO - En iyi parametreler: {'gradientboostingregressor__learning_rate': 0.05, 'gradientboostingregressor__max_depth': 4, 'gradientboostingregressor__n_estimators': 200, 'polynomialfeatures__degree': 2}
+2025-06-26 11:03:32,219 - INFO - En iyi skor: 150142.0048
+2025-06-26 11:06:30,613 - INFO - 
 TYT Model Deðerlendirmesi:
-2025-06-24 17:48:51,581 - INFO - 
+2025-06-26 11:06:30,614 - INFO - 
 Eðitim Seti Performansý:
-2025-06-24 17:48:51,582 - INFO - R² skoru: 0.6689
-2025-06-24 17:48:51,582 - INFO - MAE: 88495.9754
-2025-06-24 17:48:51,582 - INFO - RMSE: 141738.0490
-2025-06-24 17:48:51,583 - INFO - 
+2025-06-26 11:06:30,614 - INFO - R² skoru: 0.6689
+2025-06-26 11:06:30,615 - INFO - MAE: 88495.9754
+2025-06-26 11:06:30,615 - INFO - RMSE: 141738.0490
+2025-06-26 11:06:30,615 - INFO - 
 Test Seti Performansý:
-2025-06-24 17:48:51,583 - INFO - R² skoru: 0.6507
-2025-06-24 17:48:51,584 - INFO - MAE: 89512.9590
-2025-06-24 17:48:51,584 - INFO - RMSE: 144755.7547
-2025-06-24 17:48:51,584 - INFO - 
+2025-06-26 11:06:30,616 - INFO - R² skoru: 0.6507
+2025-06-26 11:06:30,616 - INFO - MAE: 89512.9590
+2025-06-26 11:06:30,616 - INFO - RMSE: 144755.7547
+2025-06-26 11:06:30,617 - INFO - 
 Cross-Validation MAE: 116313.0639
-2025-06-24 17:48:51,610 - INFO - tyt modeli ve metrikleri kaydedildi
-2025-06-24 17:48:51,613 - INFO - 
+2025-06-26 11:06:30,635 - INFO - tyt modeli ve metrikleri kaydedildi
+2025-06-26 11:06:30,636 - INFO - 
 ==================== AYT_SAYISAL ÝÞLEMÝ BAÞLATILIYOR ====================
-2025-06-24 17:48:51,666 - INFO - ayt_sayisal veri seti yüklendi. Boyut: (17665, 4)
-2025-06-24 17:48:51,668 - INFO - ayt_sayisal model eðitimi baþlatýlýyor
-2025-06-24 17:48:51,669 - INFO - 
+2025-06-26 11:06:30,655 - INFO - ayt_sayisal veri seti yüklendi. Boyut: (17665, 4)
+2025-06-26 11:06:30,656 - INFO - ayt_sayisal model eðitimi baþlatýlýyor
+2025-06-26 11:06:30,658 - INFO - 
 ayt_sayisal için parametre optimizasyonu baþlatýlýyor
-2025-06-24 17:48:51,669 - INFO - Test edilecek parametre kombinasyonlarý: {'randomforestregressor__n_estimators': [100, 150, 200], 'randomforestregressor__max_depth': [5, 7, 9], 'randomforestregressor__min_samples_leaf': [2, 3]}
-2025-06-24 18:00:31,129 - INFO - Optimizasyon tamamlandý. Süre: 0:11:39.458991
-2025-06-24 18:00:31,130 - INFO - En iyi parametreler: {'randomforestregressor__max_depth': 9, 'randomforestregressor__min_samples_leaf': 2, 'randomforestregressor__n_estimators': 200}
-2025-06-24 18:00:31,130 - INFO - En iyi skor: 29351.1085
-2025-06-24 18:00:50,030 - INFO - 
+2025-06-26 11:06:30,659 - INFO - Test edilecek parametre kombinasyonlarý: {'randomforestregressor__n_estimators': [100, 150, 200], 'randomforestregressor__max_depth': [5, 7, 9], 'randomforestregressor__min_samples_leaf': [2, 3]}
+2025-06-26 11:07:57,963 - INFO - Optimizasyon tamamlandý. Süre: 0:01:27.302547
+2025-06-26 11:07:57,964 - INFO - En iyi parametreler: {'randomforestregressor__max_depth': 9, 'randomforestregressor__min_samples_leaf': 2, 'randomforestregressor__n_estimators': 200}
+2025-06-26 11:07:57,964 - INFO - En iyi skor: 29351.1085
+2025-06-26 11:08:16,630 - INFO - 
 AYT_SAYISAL Model Deðerlendirmesi:
-2025-06-24 18:00:50,031 - INFO - 
+2025-06-26 11:08:16,631 - INFO - 
 Eðitim Seti Performansý:
-2025-06-24 18:00:50,032 - INFO - R² skoru: 0.9696
-2025-06-24 18:00:50,032 - INFO - MAE: 12800.2329
-2025-06-24 18:00:50,033 - INFO - RMSE: 23573.2736
-2025-06-24 18:00:50,033 - INFO - 
+2025-06-26 11:08:16,632 - INFO - R² skoru: 0.9696
+2025-06-26 11:08:16,634 - INFO - MAE: 12800.2329
+2025-06-26 11:08:16,636 - INFO - RMSE: 23573.2736
+2025-06-26 11:08:16,638 - INFO - 
 Test Seti Performansý:
-2025-06-24 18:00:50,034 - INFO - R² skoru: 0.9539
-2025-06-24 18:00:50,034 - INFO - MAE: 14802.9235
-2025-06-24 18:00:50,035 - INFO - RMSE: 28950.1544
-2025-06-24 18:00:50,035 - INFO - 
+2025-06-26 11:08:16,639 - INFO - R² skoru: 0.9539
+2025-06-26 11:08:16,640 - INFO - MAE: 14802.9235
+2025-06-26 11:08:16,640 - INFO - RMSE: 28950.1544
+2025-06-26 11:08:16,641 - INFO - 
 Cross-Validation MAE: 21766.9425
-2025-06-24 18:00:50,269 - INFO - ayt_sayisal modeli ve metrikleri kaydedildi
-2025-06-24 18:00:50,274 - INFO - 
+2025-06-26 11:08:16,849 - INFO - ayt_sayisal modeli ve metrikleri kaydedildi
+2025-06-26 11:08:16,855 - INFO - 
 ==================== AYT_EA ÝÞLEMÝ BAÞLATILIYOR ====================
-2025-06-24 18:00:50,343 - INFO - ayt_ea veri seti yüklendi. Boyut: (11335, 3)
-2025-06-24 18:00:50,344 - INFO - ayt_ea model eðitimi baþlatýlýyor
-2025-06-24 18:00:50,344 - INFO - 
+2025-06-26 11:08:16,878 - INFO - ayt_ea veri seti yüklendi. Boyut: (11335, 3)
+2025-06-26 11:08:16,879 - INFO - ayt_ea model eðitimi baþlatýlýyor
+2025-06-26 11:08:16,880 - INFO - 
 ayt_ea için parametre optimizasyonu baþlatýlýyor
-2025-06-24 18:00:50,345 - INFO - Test edilecek parametre kombinasyonlarý: {'gradientboostingregressor__n_estimators': [100, 150], 'gradientboostingregressor__max_depth': [3, 4], 'gradientboostingregressor__learning_rate': [0.05, 0.1], 'polynomialfeatures__degree': [2]}
-2025-06-24 18:01:18,245 - INFO - Optimizasyon tamamlandý. Süre: 0:00:27.898756
-2025-06-24 18:01:18,246 - INFO - En iyi parametreler: {'gradientboostingregressor__learning_rate': 0.05, 'gradientboostingregressor__max_depth': 4, 'gradientboostingregressor__n_estimators': 150, 'polynomialfeatures__degree': 2}
-2025-06-24 18:01:18,246 - INFO - En iyi skor: 88756.5980
-2025-06-24 18:01:29,792 - INFO - 
+2025-06-26 11:08:16,880 - INFO - Test edilecek parametre kombinasyonlarý: {'gradientboostingregressor__n_estimators': [100, 150], 'gradientboostingregressor__max_depth': [3, 4], 'gradientboostingregressor__learning_rate': [0.05, 0.1], 'polynomialfeatures__degree': [2]}
+2025-06-26 11:08:40,811 - INFO - Optimizasyon tamamlandý. Süre: 0:00:23.930151
+2025-06-26 11:08:40,813 - INFO - En iyi parametreler: {'gradientboostingregressor__learning_rate': 0.05, 'gradientboostingregressor__max_depth': 4, 'gradientboostingregressor__n_estimators': 150, 'polynomialfeatures__degree': 2}
+2025-06-26 11:08:40,813 - INFO - En iyi skor: 88756.5980
+2025-06-26 11:08:52,462 - INFO - 
 AYT_EA Model Deðerlendirmesi:
-2025-06-24 18:01:29,794 - INFO - 
+2025-06-26 11:08:52,464 - INFO - 
 Eðitim Seti Performansý:
-2025-06-24 18:01:29,794 - INFO - R² skoru: 0.9620
-2025-06-24 18:01:29,794 - INFO - MAE: 52440.4325
-2025-06-24 18:01:29,794 - INFO - RMSE: 89746.9414
-2025-06-24 18:01:29,795 - INFO - 
+2025-06-26 11:08:52,465 - INFO - R² skoru: 0.9620
+2025-06-26 11:08:52,465 - INFO - MAE: 52440.4325
+2025-06-26 11:08:52,466 - INFO - RMSE: 89746.9414
+2025-06-26 11:08:52,466 - INFO - 
 Test Seti Performansý:
-2025-06-24 18:01:29,795 - INFO - R² skoru: 0.9603
-2025-06-24 18:01:29,795 - INFO - MAE: 55565.8748
-2025-06-24 18:01:29,796 - INFO - RMSE: 90515.7325
-2025-06-24 18:01:29,796 - INFO - 
+2025-06-26 11:08:52,467 - INFO - R² skoru: 0.9603
+2025-06-26 11:08:52,467 - INFO - MAE: 55565.8748
+2025-06-26 11:08:52,468 - INFO - RMSE: 90515.7325
+2025-06-26 11:08:52,469 - INFO - 
 Cross-Validation MAE: 84738.4178
-2025-06-24 18:01:29,806 - INFO - ayt_ea modeli ve metrikleri kaydedildi
-2025-06-24 18:01:29,808 - INFO - 
+2025-06-26 11:08:52,477 - INFO - ayt_ea modeli ve metrikleri kaydedildi
+2025-06-26 11:08:52,478 - INFO - 
 ==================== AYT_SOZEL ÝÞLEMÝ BAÞLATILIYOR ====================
-2025-06-24 18:01:29,842 - INFO - ayt_sozel veri seti yüklendi. Boyut: (9773, 2)
-2025-06-24 18:01:29,843 - INFO - ayt_sozel model eðitimi baþlatýlýyor
-2025-06-24 18:01:29,844 - INFO - 
+2025-06-26 11:08:52,499 - INFO - ayt_sozel veri seti yüklendi. Boyut: (9773, 7)
+2025-06-26 11:08:52,499 - INFO - ayt_sozel model eðitimi baþlatýlýyor
+2025-06-26 11:08:52,502 - INFO - 
 ayt_sozel için parametre optimizasyonu baþlatýlýyor
-2025-06-24 18:01:29,844 - INFO - Test edilecek parametre kombinasyonlarý: {'polynomialfeatures__degree': [2, 3], 'ridge__alpha': [0.1, 0.5, 1.0, 5.0, 10.0]}
-2025-06-24 18:01:30,134 - INFO - Optimizasyon tamamlandý. Süre: 0:00:00.288490
-2025-06-24 18:01:30,134 - INFO - En iyi parametreler: {'polynomialfeatures__degree': 2, 'ridge__alpha': 0.1}
-2025-06-24 18:01:30,135 - INFO - En iyi skor: 130687.3089
-2025-06-24 18:01:30,196 - INFO - 
+2025-06-26 11:08:52,502 - INFO - Test edilecek parametre kombinasyonlarý: {'randomforestregressor__n_estimators': [100, 150], 'randomforestregressor__max_depth': [5, 7, 10], 'randomforestregressor__min_samples_leaf': [2, 4]}
+2025-06-26 11:09:51,772 - INFO - Optimizasyon tamamlandý. Süre: 0:00:59.268558
+2025-06-26 11:09:51,772 - INFO - En iyi parametreler: {'randomforestregressor__max_depth': 7, 'randomforestregressor__min_samples_leaf': 2, 'randomforestregressor__n_estimators': 100}
+2025-06-26 11:09:51,773 - INFO - En iyi skor: 184929.1036
+2025-06-26 11:10:00,821 - INFO - 
 AYT_SOZEL Model Deðerlendirmesi:
-2025-06-24 18:01:30,197 - INFO - 
+2025-06-26 11:10:00,821 - INFO - 
 Eðitim Seti Performansý:
-2025-06-24 18:01:30,197 - INFO - R² skoru: 0.8922
-2025-06-24 18:01:30,198 - INFO - MAE: 101909.9219
-2025-06-24 18:01:30,198 - INFO - RMSE: 150799.6325
-2025-06-24 18:01:30,198 - INFO - 
+2025-06-26 11:10:00,822 - INFO - R² skoru: 0.9185
+2025-06-26 11:10:00,822 - INFO - MAE: 89268.4043
+2025-06-26 11:10:00,824 - INFO - RMSE: 131124.9672
+2025-06-26 11:10:00,824 - INFO - 
 Test Seti Performansý:
-2025-06-24 18:01:30,199 - INFO - R² skoru: 0.8971
-2025-06-24 18:01:30,199 - INFO - MAE: 100895.6077
-2025-06-24 18:01:30,199 - INFO - RMSE: 147149.0098
-2025-06-24 18:01:30,200 - INFO - 
-Cross-Validation MAE: 110653.4379
-2025-06-24 18:01:30,202 - INFO - ayt_sozel modeli ve metrikleri kaydedildi
-2025-06-24 18:01:30,202 - INFO - 
+2025-06-26 11:10:00,825 - INFO - R² skoru: 0.9030
+2025-06-26 11:10:00,826 - INFO - MAE: 97189.9819
+2025-06-26 11:10:00,828 - INFO - RMSE: 142879.9960
+2025-06-26 11:10:00,829 - INFO - 
+Cross-Validation MAE: 149297.4081
+2025-06-26 11:10:00,907 - INFO - ayt_sozel modeli ve metrikleri kaydedildi
+2025-06-26 11:10:00,914 - INFO - 
 ==================== AYT_DIL ÝÞLEMÝ BAÞLATILIYOR ====================
-2025-06-24 18:01:30,226 - INFO - ayt_dil veri seti yüklendi. Boyut: (7180, 1)
-2025-06-24 18:01:30,227 - INFO - ayt_dil model eðitimi baþlatýlýyor
-2025-06-24 18:01:30,228 - INFO - 
+2025-06-26 11:10:00,933 - INFO - ayt_dil veri seti yüklendi. Boyut: (7180, 1)
+2025-06-26 11:10:00,934 - INFO - ayt_dil model eðitimi baþlatýlýyor
+2025-06-26 11:10:00,934 - INFO - 
 ayt_dil için parametre optimizasyonu baþlatýlýyor
-2025-06-24 18:01:30,228 - INFO - Test edilecek parametre kombinasyonlarý: {'randomforestregressor__n_estimators': [50, 75, 100], 'randomforestregressor__max_depth': [3, 4, 5], 'randomforestregressor__min_samples_leaf': [3, 5]}
-2025-06-24 18:01:39,552 - INFO - Optimizasyon tamamlandý. Süre: 0:00:09.322583
-2025-06-24 18:01:39,552 - INFO - En iyi parametreler: {'randomforestregressor__max_depth': 5, 'randomforestregressor__min_samples_leaf': 3, 'randomforestregressor__n_estimators': 50}
-2025-06-24 18:01:39,553 - INFO - En iyi skor: 16480.7588
-2025-06-24 18:01:40,999 - INFO - 
+2025-06-26 11:10:00,935 - INFO - Test edilecek parametre kombinasyonlarý: {'randomforestregressor__n_estimators': [50, 75, 100], 'randomforestregressor__max_depth': [3, 4, 5], 'randomforestregressor__min_samples_leaf': [3, 5]}
+2025-06-26 11:10:12,297 - INFO - Optimizasyon tamamlandý. Süre: 0:00:11.361294
+2025-06-26 11:10:12,298 - INFO - En iyi parametreler: {'randomforestregressor__max_depth': 5, 'randomforestregressor__min_samples_leaf': 3, 'randomforestregressor__n_estimators': 50}
+2025-06-26 11:10:12,299 - INFO - En iyi skor: 16646.0749
+2025-06-26 11:10:13,421 - INFO - 
 AYT_DIL Model Deðerlendirmesi:
-2025-06-24 18:01:40,999 - INFO - 
+2025-06-26 11:10:13,422 - INFO - 
 Eðitim Seti Performansý:
-2025-06-24 18:01:41,000 - INFO - R² skoru: 0.4569
-2025-06-24 18:01:41,001 - INFO - MAE: 16242.4573
-2025-06-24 18:01:41,001 - INFO - RMSE: 26577.9665
-2025-06-24 18:01:41,001 - INFO - 
+2025-06-26 11:10:13,422 - INFO - R² skoru: 0.4579
+2025-06-26 11:10:13,423 - INFO - MAE: 16234.4150
+2025-06-26 11:10:13,423 - INFO - RMSE: 26554.3374
+2025-06-26 11:10:13,424 - INFO - 
 Test Seti Performansý:
-2025-06-24 18:01:41,002 - INFO - R² skoru: 0.5048
-2025-06-24 18:01:41,002 - INFO - MAE: 14985.8980
-2025-06-24 18:01:41,003 - INFO - RMSE: 25323.5831
-2025-06-24 18:01:41,005 - INFO - 
-Cross-Validation MAE: 16440.9236
-2025-06-24 18:01:41,073 - INFO - ayt_dil modeli ve metrikleri kaydedildi
-2025-06-24 18:01:41,074 - INFO - 
+2025-06-26 11:10:13,425 - INFO - R² skoru: 0.4975
+2025-06-26 11:10:13,426 - INFO - MAE: 15083.0101
+2025-06-26 11:10:13,426 - INFO - RMSE: 25510.0764
+2025-06-26 11:10:13,427 - INFO - 
+Cross-Validation MAE: 16578.7356
+2025-06-26 11:10:13,453 - INFO - ayt_dil modeli ve metrikleri kaydedildi
+2025-06-26 11:10:13,454 - INFO - 
 === GENEL MODEL PERFORMANS RAPORU ===
-2025-06-24 18:01:41,075 - INFO - 
+2025-06-26 11:10:13,455 - INFO - 
 TYT:
-2025-06-24 18:01:41,076 - INFO - Veri seti boyutu: 75602
-2025-06-24 18:01:41,076 - INFO - Test R²: 0.6507
-2025-06-24 18:01:41,077 - INFO - Test MAE: 89512.9590
-2025-06-24 18:01:41,077 - INFO - 
+2025-06-26 11:10:13,455 - INFO - Veri seti boyutu: 75602
+2025-06-26 11:10:13,456 - INFO - Test R²: 0.6507
+2025-06-26 11:10:13,456 - INFO - Test MAE: 89512.9590
+2025-06-26 11:10:13,458 - INFO - 
 AYT_SAYISAL:
-2025-06-24 18:01:41,078 - INFO - Veri seti boyutu: 17665
-2025-06-24 18:01:41,078 - INFO - Test R²: 0.9539
-2025-06-24 18:01:41,080 - INFO - Test MAE: 14802.9235
-2025-06-24 18:01:41,080 - INFO - 
+2025-06-26 11:10:13,459 - INFO - Veri seti boyutu: 17665
+2025-06-26 11:10:13,461 - INFO - Test R²: 0.9539
+2025-06-26 11:10:13,462 - INFO - Test MAE: 14802.9235
+2025-06-26 11:10:13,463 - INFO - 
 AYT_EA:
-2025-06-24 18:01:41,081 - INFO - Veri seti boyutu: 11335
-2025-06-24 18:01:41,082 - INFO - Test R²: 0.9603
-2025-06-24 18:01:41,082 - INFO - Test MAE: 55565.8748
-2025-06-24 18:01:41,084 - INFO - 
+2025-06-26 11:10:13,463 - INFO - Veri seti boyutu: 11335
+2025-06-26 11:10:13,464 - INFO - Test R²: 0.9603
+2025-06-26 11:10:13,464 - INFO - Test MAE: 55565.8748
+2025-06-26 11:10:13,465 - INFO - 
 AYT_SOZEL:
-2025-06-24 18:01:41,092 - INFO - Veri seti boyutu: 9773
-2025-06-24 18:01:41,096 - INFO - Test R²: 0.8971
-2025-06-24 18:01:41,097 - INFO - Test MAE: 100895.6077
-2025-06-24 18:01:41,100 - INFO - 
+2025-06-26 11:10:13,465 - INFO - Veri seti boyutu: 9773
+2025-06-26 11:10:13,465 - INFO - Test R²: 0.9030
+2025-06-26 11:10:13,466 - INFO - Test MAE: 97189.9819
+2025-06-26 11:10:13,466 - INFO - 
 AYT_DIL:
-2025-06-24 18:01:41,102 - INFO - Veri seti boyutu: 7180
-2025-06-24 18:01:41,108 - INFO - Test R²: 0.5048
-2025-06-24 18:01:41,109 - INFO - Test MAE: 14985.8980
-2025-06-25 07:39:48,046 - INFO - TYT Ensemble Model Eðitimi Baþlatýlýyor
-2025-06-25 07:39:48,046 - INFO - ==================================================
-2025-06-25 07:39:48,115 - INFO - TYT filtrelenmiþ veri seti yüklendi. Boyut: (75602, 6)
-2025-06-25 07:39:48,131 - INFO - TYT Ensemble model eðitimi baþlatýlýyor...
-2025-06-25 07:39:48,132 - INFO - Bireysel modeller eðitiliyor...
+2025-06-26 11:10:13,467 - INFO - Veri seti boyutu: 7180
+2025-06-26 11:10:13,467 - INFO - Test R²: 0.4975
+2025-06-26 11:10:13,467 - INFO - Test MAE: 15083.0101

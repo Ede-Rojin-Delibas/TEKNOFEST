@@ -1,48 +1,48 @@
-2025-06-25 08:04:48,223 - werkzeug - WARNING -  * Debugger is active!
-2025-06-25 08:04:48,230 - werkzeug - INFO -  * Debugger PIN: 642-846-463
-2025-06-25 08:05:00,639 - werkzeug - INFO - 127.0.0.1 - - [25/Jun/2025 08:05:00] "GET /api/health HTTP/1.1" 200 -
-2025-06-25 08:05:02,708 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=tyt
-2025-06-25 08:05:02,708 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=72.5
-2025-06-25 08:05:02,708 - app.utils.tahmin - INFO - Toplam net hesaplandý: 72.5
-2025-06-25 08:05:03,330 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\tyt_ensemble_model.joblib
-2025-06-25 08:05:03,394 - app.utils.tahmin - INFO - Modelin ham tahmini: 217160.38355501898
-2025-06-25 08:05:03,394 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: 150000.0
-2025-06-25 08:05:03,394 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=150000
-2025-06-25 08:05:03,394 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: tyt
-2025-06-25 08:05:03,409 - werkzeug - INFO - 127.0.0.1 - - [25/Jun/2025 08:05:03] "POST /api/tahmin HTTP/1.1" 200 -
-2025-06-25 08:05:06,442 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=ayt_sayisal
-2025-06-25 08:05:06,442 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=58.75
-2025-06-25 08:05:06,442 - app.utils.tahmin - INFO - Toplam net hesaplandý: 58.75
-2025-06-25 08:05:06,750 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\ayt_sayisal_model.joblib
-2025-06-25 08:05:06,832 - app.utils.tahmin - INFO - Modelin ham tahmini: 14097.374234231776
-2025-06-25 08:05:06,832 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: 14097.374234231776
-2025-06-25 08:05:06,840 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=14097
-2025-06-25 08:05:06,840 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: ayt_sayisal
-2025-06-25 08:05:06,840 - werkzeug - INFO - 127.0.0.1 - - [25/Jun/2025 08:05:06] "POST /api/tahmin HTTP/1.1" 200 -
-2025-06-25 08:05:09,887 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=ayt_ea
-2025-06-25 08:05:09,887 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=59.0
-2025-06-25 08:05:09,887 - app.utils.tahmin - INFO - Toplam net hesaplandý: 59.0
-2025-06-25 08:05:09,927 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\ayt_ea_model.joblib
-2025-06-25 08:05:09,938 - app.utils.tahmin - INFO - Modelin ham tahmini: 65369.8889125275
-2025-06-25 08:05:09,938 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: 65369.8889125275
-2025-06-25 08:05:09,938 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=65369
-2025-06-25 08:05:09,938 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: ayt_ea
-2025-06-25 08:05:09,938 - werkzeug - INFO - 127.0.0.1 - - [25/Jun/2025 08:05:09] "POST /api/tahmin HTTP/1.1" 200 -
-2025-06-25 08:05:12,981 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=ayt_sozel
-2025-06-25 08:05:12,981 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=23.75
-2025-06-25 08:05:12,981 - app.utils.tahmin - INFO - Toplam net hesaplandý: 23.75
-2025-06-25 08:05:12,981 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\ayt_sozel_model.joblib
-2025-06-25 08:05:13,002 - app.utils.tahmin - INFO - Modelin ham tahmini: -9655.006003303803
-2025-06-25 08:05:13,002 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: -9655.006003303803
-2025-06-25 08:05:13,009 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=1
-2025-06-25 08:05:13,009 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: ayt_sozel
-2025-06-25 08:05:13,009 - werkzeug - INFO - 127.0.0.1 - - [25/Jun/2025 08:05:13] "POST /api/tahmin HTTP/1.1" 200 -
-2025-06-25 08:05:16,064 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=ayt_dil
-2025-06-25 08:05:16,072 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=73.75
-2025-06-25 08:05:16,072 - app.utils.tahmin - INFO - Toplam net hesaplandý: 73.75
-2025-06-25 08:05:16,143 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\ayt_dil_model.joblib
-2025-06-25 08:05:16,172 - app.utils.tahmin - INFO - Modelin ham tahmini: 13203.35911758609
-2025-06-25 08:05:16,172 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: 13203.35911758609
-2025-06-25 08:05:16,172 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=13202
-2025-06-25 08:05:16,172 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: ayt_dil
-2025-06-25 08:05:16,172 - werkzeug - INFO - 127.0.0.1 - - [25/Jun/2025 08:05:16] "POST /api/tahmin HTTP/1.1" 200 -
+2025-06-26 11:23:46,550 - werkzeug - WARNING -  * Debugger is active!
+2025-06-26 11:23:46,558 - werkzeug - INFO -  * Debugger PIN: 642-846-463
+2025-06-26 11:23:58,103 - werkzeug - INFO - 127.0.0.1 - - [26/Jun/2025 11:23:58] "GET /api/health HTTP/1.1" 200 -
+2025-06-26 11:24:00,138 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=tyt
+2025-06-26 11:24:00,139 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=72.5
+2025-06-26 11:24:00,139 - app.utils.tahmin - INFO - Toplam net hesaplandý: 72.5
+2025-06-26 11:24:00,880 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\tyt_ensemble_model.joblib
+2025-06-26 11:24:00,934 - app.utils.tahmin - INFO - Modelin ham tahmini: 217160.38355501898
+2025-06-26 11:24:00,934 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: 150000.0
+2025-06-26 11:24:00,934 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=150000
+2025-06-26 11:24:00,934 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: tyt
+2025-06-26 11:24:00,946 - werkzeug - INFO - 127.0.0.1 - - [26/Jun/2025 11:24:00] "POST /api/tahmin HTTP/1.1" 200 -
+2025-06-26 11:24:03,995 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=ayt_sayisal
+2025-06-26 11:24:03,995 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=58.75
+2025-06-26 11:24:03,995 - app.utils.tahmin - INFO - Toplam net hesaplandý: 58.75
+2025-06-26 11:24:04,121 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\ayt_sayisal_model.joblib
+2025-06-26 11:24:04,189 - app.utils.tahmin - INFO - Modelin ham tahmini: 14097.374234231776
+2025-06-26 11:24:04,189 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: 14097.374234231776
+2025-06-26 11:24:04,192 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=14097
+2025-06-26 11:24:04,193 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: ayt_sayisal
+2025-06-26 11:24:04,193 - werkzeug - INFO - 127.0.0.1 - - [26/Jun/2025 11:24:04] "POST /api/tahmin HTTP/1.1" 200 -
+2025-06-26 11:24:07,228 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=ayt_ea
+2025-06-26 11:24:07,228 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=59.0
+2025-06-26 11:24:07,228 - app.utils.tahmin - INFO - Toplam net hesaplandý: 59.0
+2025-06-26 11:24:07,245 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\ayt_ea_model.joblib
+2025-06-26 11:24:07,248 - app.utils.tahmin - INFO - Modelin ham tahmini: 65369.8889125275
+2025-06-26 11:24:07,249 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: 65369.8889125275
+2025-06-26 11:24:07,250 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=65369
+2025-06-26 11:24:07,250 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: ayt_ea
+2025-06-26 11:24:07,252 - werkzeug - INFO - 127.0.0.1 - - [26/Jun/2025 11:24:07] "POST /api/tahmin HTTP/1.1" 200 -
+2025-06-26 11:24:10,265 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=ayt_sozel
+2025-06-26 11:24:10,265 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=53.0
+2025-06-26 11:24:10,265 - app.utils.tahmin - INFO - Toplam net hesaplandý: 56.5
+2025-06-26 11:24:10,338 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\ayt_sozel_model.joblib
+2025-06-26 11:24:10,377 - app.utils.tahmin - INFO - Modelin ham tahmini: 36056.8233795226
+2025-06-26 11:24:10,377 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: 36056.8233795226
+2025-06-26 11:24:10,377 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=36055
+2025-06-26 11:24:10,377 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: ayt_sozel
+2025-06-26 11:24:10,377 - werkzeug - INFO - 127.0.0.1 - - [26/Jun/2025 11:24:10] "POST /api/tahmin HTTP/1.1" 200 -
+2025-06-26 11:24:13,433 - app.api.routes - INFO - Tahmin isteði alýndý: Sýnav Türü=ayt_dil
+2025-06-26 11:24:13,433 - app.api.routes - INFO - Net hesaplama tamamlandý: Toplam Net=73.75
+2025-06-26 11:24:13,433 - app.utils.tahmin - INFO - Toplam net hesaplandý: 73.75
+2025-06-26 11:24:13,488 - app.utils.tahmin - INFO - Model yüklendi: data\models\v3\ayt_dil_model.joblib
+2025-06-26 11:24:13,520 - app.utils.tahmin - INFO - Modelin ham tahmini: 13203.35911758609
+2025-06-26 11:24:13,520 - app.utils.tahmin - INFO - Kalibre edilmiþ tahmin: 13203.35911758609
+2025-06-26 11:24:13,520 - app.api.routes - INFO - Tahmin tamamlandý: Tahmini Sýralama=13202
+2025-06-26 11:24:13,520 - app.api.routes - INFO - Ýþlem baþarýyla tamamlandý: ayt_dil
+2025-06-26 11:24:13,520 - werkzeug - INFO - 127.0.0.1 - - [26/Jun/2025 11:24:13] "POST /api/tahmin HTTP/1.1" 200 -
